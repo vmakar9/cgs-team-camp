@@ -1,28 +1,26 @@
 {
-  "name": "cgs-team-boilerplate",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "configure:hooks": "yarn && chmod +x ./hooks/setup-hooks && ./hooks/setup-hooks",
-    "configure:hooks:windows": "yarn && bash hooks/setup-hooks",
-    "start": "yarn && lerna run --parallel start",
-    "lint:fix": "npx eslint packages/**/*.ts packages/**/*.tsx --fix"
-  },
-  "devDependencies": {
-    "eslint": "^8.22.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^3.4.2",
-    "eslint-plugin-prettier": "^4.2.1",
-    "lerna": "^4.0.0",
-    "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
-  },
-  "dependencies": {}
+	"name": "cgs-team-camp-template-2024",
+	"version": "1.0.0",
+	"description": "",
+	"private": "true",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"lint": "npx eslint packages/backend packages/frontend",
+		"lint:fix": "npx eslint packages/backend packages/frontend --fix",
+		"prepare": "husky"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-prettier": "^5.1.3",
+		"prettier": "^3.2.5",
+		"typescript": "^5.3.3"
+	},
+	"packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

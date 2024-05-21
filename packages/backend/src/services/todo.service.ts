@@ -1,5 +1,5 @@
 export default class TodoService {
-  async findAll() {
-    return 'Todos';
-  }
+	async findAll(): Promise<string> {
+		return 'Todos';
+	}
 }

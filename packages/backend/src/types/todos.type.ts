@@ -1,5 +1,5 @@
-// TODO: Put a real interfaces here
+// TODO: Put a real types here
 
-export interface ITodo {
-  data: string;
-}
+export type TodoType = {
+	data: string;
+};

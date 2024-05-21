@@ -1,11 +1,10 @@
 declare global {
-  namespace NodeJS {
-    interface ProcessEnv {
-      MONGO_URI: string;
-      JWT_SECRET: string;
-      JWT_EXPIRATION: string;
-    }
-  }
+	namespace NodeJS {
+		interface ProcessEnv {
+			TEST: string;
+			DATABASE_URL: string;
+		}
+	}
 }
 
 // If this file has no import/export statements (i.e. is a script)
