@@ -1,9 +1,10 @@
 import { Router } from 'express';
 import todoController from '../../controllers/todo.controller';
-import { todoMiddleware } from '../../middleware/todo.middleware';
 import { isExist } from '../../middleware/isExist.middleware';
 import { EModels } from '../../enum/models.enum';
 import { tryCatch } from '../../middleware/trycatch.middleware';
+import { validate } from '../../middleware/todo.middleware';
+import { todoSchema } from '../../validate/todo.validate';
 
 const todosRouter: Router = Router();
 
@@ -14,7 +15,7 @@ todosRouter.get(
 
 todosRouter.post(
 	'/create',
-	todoMiddleware.isValidCreate,
+	validate(todoSchema),
 	tryCatch(todoController.createTodo.bind(todoController)),
 );
 
@@ -27,7 +28,7 @@ todosRouter.get(
 todosRouter.put(
 	'/update/:id',
 	isExist(EModels.TODOS),
-	todoMiddleware.isValidUpdate,
+	validate(todoSchema),
 	tryCatch(todoController.updateTodo.bind(todoController)),
 );
 

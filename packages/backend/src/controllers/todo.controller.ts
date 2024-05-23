@@ -1,7 +1,7 @@
 import { Response, Request } from 'express';
 import TodoService from '../services/todo.service';
 import { Todo } from '@/types/todos.type';
-import { ApiError } from '@/error/api.error';
+import { ApiError } from '../error/api.error';
 
 export class TodoController {
 	constructor(private todoService: TodoService) {}
