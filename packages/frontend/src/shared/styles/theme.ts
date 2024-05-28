@@ -1,0 +1,62 @@
+export const theme = {
+	colors: {
+		primary: '#007BFF',
+		secondary: '#6C757D',
+		success: '#28A745',
+		error: '#DC3545',
+		warning: '#FFC107',
+		info: '#17A2B8',
+		light: '#F8F9FA',
+		dark: '#95a5a6',
+		white: '#FFFFFF',
+		black: 'rgba(0, 0, 0, 0.1)',
+		muted: '#95A5A6',
+	},
+	fontSizes: {
+		xsmall: '10px',
+		small: '12px',
+		medium: '16px',
+		large: '20px',
+		xlarge: '24px',
+	},
+	spaces: {
+		xxsmall: '2px',
+		xsmall: '4px',
+		small: '8px',
+		medium: '16px',
+		large: '20px',
+		xlarge: '25px',
+		xxlarge: '100px',
+		xxlarge_2: '50px',
+		xxlargeVh: '80vh',
+	},
+	height: {
+		headerHeight: '70px',
+		filtersHeight: '50px',
+		full: '100vh',
+	},
+	radius: {
+		small: '3px',
+		medium: '8px',
+		large: '16px',
+	},
+	boxShadow: {
+		light: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+		lighter: '0px 1px 1px rgba(255, 255, 255, 0.06)',
+		medium: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+		heavy: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+	},
+	width: {
+		maxWidth: '400px',
+	},
+	media: {
+		mobile: 767,
+		tablet: 768,
+		desktop: 1224,
+	},
+	spacing: {
+		small: '10px',
+		medium: '15px',
+		large: '25px',
+	},
+};

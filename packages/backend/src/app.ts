@@ -1,7 +1,7 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express } from 'express';
 import 'dotenv/config';
 import bodyParser from 'body-parser';
-
+import cors from 'cors';
 import AppRouter from './routes';
 
 const port = 3030;
@@ -11,9 +11,13 @@ const router = new AppRouter(app);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req: Request, res: Response) => {
-	res.send('Hello Node!');
-});
+app.use(
+	cors({
+		origin: '*',
+		methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+		allowedHeaders: ['Content-Type', 'Authorization'],
+	}),
+);
 
 router.init();
 
