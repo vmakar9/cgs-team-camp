@@ -17,6 +17,12 @@ model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
+  password String
+  isVerified Boolean @default(false)
+  accessTokens   AccessToken[]
+  refreshTokens  RefreshToken[]
+  forgotToken ForgotToken[]
+  verifyToken VerifyToken[]
 }
 
 model Todo {
@@ -24,4 +30,37 @@ model Todo {
   title String
   completed Boolean @default(false)
   description String?
+  isPrivate Boolean @default(false)
+}
+
+model AccessToken {
+  id        Int      @id @default(autoincrement())
+  token     String
+  userId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model RefreshToken {
+  id        Int      @id @default(autoincrement())
+  token     String
+  userId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model ForgotToken {
+  id        Int      @id @default(autoincrement())
+  token     String
+  userId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model VerifyToken {
+  id        Int      @id @default(autoincrement())
+  token     String
+  userId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
 }
